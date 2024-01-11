@@ -7,9 +7,23 @@ $fields = array('name' => 'Name', 'email' => 'Email', 'subject' => 'Subject', 'm
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
+$envPath = __DIR__ . '/../../.env';
+if (file_exists($envPath)) {
+    $line = trim(file_get_contents($envPath));
+    if ($line && strpos($line, '#') !== 0) {
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value);
+        if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+            $_ENV[$name] = $value;
+            $_SERVER[$name] = $value;
+        }
+    }
+}
+
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
     //your site secret key
-    $secret = '6LfeUU0pAAAAADkUbci9MmZXi1HMVXYn_hD9NO4e';
+    $secret = $_ENV['API_KEY'];
     //get verify response data
 
     $c = curl_init('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
