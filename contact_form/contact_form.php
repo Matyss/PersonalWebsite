@@ -22,9 +22,7 @@ if (file_exists($envPath)) {
 }
 
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
-    //your site secret key
     $secret = $_ENV['API_KEY'];
-    //get verify response data
 
     $c = curl_init('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
     curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
