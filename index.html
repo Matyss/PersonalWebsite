@@ -1603,11 +1603,11 @@
                     </div>
 
                     <form
-                      id="contact_form"
+                      id="contactForm"
                       class="contact-form"
-                      action="contact_form/contact_form.php"
                       method="post"
                     >
+                      <div id="formStatus" class="form-status"></div>
                       <div class="messages"></div>
 
                       <div class="controls two-columns">
@@ -1704,7 +1704,14 @@
     <script src="js/animating.js"></script>
 
     <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      // Only load reCAPTCHA if not on localhost
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        document.head.appendChild(script);
+      }
+    </script>
 
     <script src="js/perfect-scrollbar.min.js"></script>
     <script src="js/jquery.shuffle.min.js"></script>
@@ -1714,7 +1721,15 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrOizf0fo6oKx-VyQY7CLaiMKzLfovH4s&loading=async"></script>
     <script src="js/jquery.googlemap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Initialize EmailJS
+      (function() {
+        emailjs.init("SJqItwSjnjorGao5x");
+      })();
+    </script>
+    <script src="js/contactForm.js"></script>
   </body>
 </html>
