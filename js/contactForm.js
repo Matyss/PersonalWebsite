@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     status.style.marginTop = '20px';
     status.style.padding = '10px';
     
-    emailjs.sendForm('service_56xa5zk', 'template_bd6yb44', form)
+    emailjs.sendForm(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, form)
       .then(function() {
         status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
         status.style.color = 'green';
