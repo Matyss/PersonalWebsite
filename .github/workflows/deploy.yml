@@ -20,25 +20,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install  # Install the necessary dependencies (adjust for your package manager)
-
-    - name: Inject environment variables into HTML/JS files
-      run: |
-        # Replace environment variables directly in the HTML/JS files
-        sed -i 's/{{EMAILJS_SERVICE_ID}}/${{ secrets.EMAILJS_SERVICE_ID }}/g' index.html js/contactForm.js
-        sed -i 's/{{EMAILJS_TEMPLATE_ID}}/${{ secrets.EMAILJS_TEMPLATE_ID }}/g' index.html js/contactForm.js
-        sed -i 's/{{GOOGLE_MAPS_API_KEY}}/${{ secrets.GOOGLE_MAPS_API_KEY }}/g' index.html js/contactForm.js
-        sed -i 's/{{RECAPTCHA_SITE_KEY}}/${{ secrets.RECAPTCHA_SITE_KEY }}/g' index.html js/contactForm.js
+        npm install
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4  # GitHub Pages deployment action
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages  # The branch where GitHub Pages will be deployed
-        folder: .  # Deploy the root folder since it's a static website
-
-    - name: Clean up secrets
-      run: |
-        unset EMAILJS_SERVICE_ID
-        unset EMAILJS_TEMPLATE_ID
-        unset GOOGLE_MAPS_API_KEY
-        unset RECAPTCHA_SITE_KEY
+        branch: gh-pages
+        folder: .

@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     
+    // Initialize EmailJS with public key
+    emailjs.init("SJqItwSjnjorGao5x");
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -27,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
       status.style.marginTop = '20px';
       status.style.padding = '10px';
   
-      // Use placeholders for EMAILJS variables
-      emailjs.sendForm('{{EMAILJS_SERVICE_ID}}', '{{EMAILJS_TEMPLATE_ID}}', form)
+      // Use direct service and template IDs
+      emailjs.sendForm('service_56xa5zk', 'template_bd6yb44', form)
         .then(function() {
           status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
           status.style.color = 'green';
