@@ -1123,11 +1123,21 @@ input[type='text'],
   padding: 5px 0;
   margin-bottom: 30px;
   opacity: 0.7;
+  height: 120px; /* Fixed height for container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+.client-block img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 /* --- End of Clients --- */
 
