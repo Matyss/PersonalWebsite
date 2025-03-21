@@ -1,4 +1,12 @@
 {
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website of Mateusz Szymajda",
+  "scripts": {
+    "build": "node js/build.js prod",
+    "build:dev": "node js/build.js dev",
+    "serve": "python -m http.server 3000"
+  },
   "dependencies": {
     "emailjs-com": "^3.2.0"
   }

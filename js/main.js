@@ -301,12 +301,12 @@
       },
     });
 
-    //Google Maps
-    $('#map').googleMap({
-      zoom: 14,
-    });
-    $('#map').addMarker({
-      address: 'Warsaw, Poland',
-    });
+    //Google Maps - temporary disabled
+    // $('#map').googleMap({
+    //   zoom: 14,
+    // });
+    // $('#map').addMarker({
+    //   address: 'Warsaw, Poland',
+    // });
   });
 })(jQuery);

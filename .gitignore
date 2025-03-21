@@ -1,5 +1,9 @@
 # HTML chunks
 html_chunks_unused/
+html_chunks/wip/
+
+# WIP files
+index.dev.html
 
 # Node modules
 node_modules/
