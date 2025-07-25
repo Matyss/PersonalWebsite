@@ -1,0 +1,30 @@
+<script src="js/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/animating.js"></script>
+
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script>
+    // Only load reCAPTCHA if not on localhost
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        document.head.appendChild(script);
+    }
+</script>
+
+<script src="js/perfect-scrollbar.min.js"></script>
+<script src="js/jquery.shuffle.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/main.js"></script>
+<script>
+    // Initialize EmailJS
+    (function () {
+        emailjs.init("SJqItwSjnjorGao5x");
+    })();
+</script>
+<script src="js/contactForm.js"></script>
