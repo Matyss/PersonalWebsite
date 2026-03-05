@@ -2898,11 +2898,22 @@ blockquote {
   background: rgba(10, 10, 10, 0.45);
 }
 
-.fun-fact {
+.impact-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.impact-stats-row > [class*="col-"] {
+  display: flex;
+}
+
+.impact-stat {
   position: relative;
   text-align: center;
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 0 15px;
   background: #fff;
   padding: 25px 10px 15px;
@@ -2919,7 +2930,7 @@ blockquote {
   transition: all 0.2s ease-in-out;
 }
 
-.fun-fact:hover {
+.impact-stat:hover {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   -o-transform: translateY(-5px);
@@ -2930,16 +2941,16 @@ blockquote {
   box-shadow: 0 12px 17px rgba(0, 0, 0, 0.12);
 }
 
-.fun-fact.gray-bg {
+.impact-stat.gray-bg {
   background-color: #fcfcfc;
 }
 
-.fun-fact h4 {
+.impact-stat h4 {
   font-size: 16px;
   margin: 15px;
 }
 
-.fun-fact i {
+.impact-stat i {
   position: relative;
   font-size: 33px;
   color: #09aeea;
@@ -2948,7 +2959,7 @@ blockquote {
   height: 33px;
 }
 
-.fun-fact .lm-info-block {
+.impact-stat .lm-info-block {
   font-size: 24px;
   font-weight: 400;
   display: block;
@@ -2956,7 +2967,7 @@ blockquote {
   color: #09aeea;
 }
 
-.fun-fact-block-value {
+.impact-stat-value {
   color: #aaa;
   font-size: 36px;
   line-height: 50px;
@@ -2964,7 +2975,7 @@ blockquote {
   margin: 15px 0 10px;
 }
 
-.fun-fact-block-text {
+.impact-stat-text {
   display: block;
 }
 
